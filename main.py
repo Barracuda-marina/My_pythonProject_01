@@ -1,11 +1,25 @@
+# Описание стандартных библиотек https://docs.python.org/3/library/index.html
 
 class Point:
-    "Класс для представления аттрибутов точек на плоскости"
+    "Класс для представления аттрибутов точек в 3d"
     color = 'red'
     sphere = 5
 
-    def setCoord():
-        print('Вызов метода setCoords')
+    def __init__(self, x=0, y=0, z=0):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def __del__(self):
+        pass
+
+    def set_coord(self, x , y, z):
+        self.x = x
+        self.y = y
+        self.z = z
+
+    def get_coord(self):
+        return (self.x, self.y, self.z)
 
 class Coord:
     "Класс для представления координат точек в 3d"
@@ -28,5 +42,7 @@ if not getattr(Point, 'f', False):
 else:
     print("Data are present")
 
-a = Point()
-b = Point()
+pt = Point(1, 1, 1)
+pt2 = Point(5, 5, 5)
+print(pt.__dict__)
+print(pt2.__dict__)
